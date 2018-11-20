@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pokecsimporter
+spec:
+  containers:
+  - name: importer
+    image: arangodb/pokecimporter:3.4
+    env:
+    - name: RCLONE_S3_ACCESS_KEY_ID
+      value: "ADD_YOURS_HERE"
+    - name: RCLONE_S3_SECRET_ACCESS_KEY
+      value: "ADD_YOURS_HERE"
+    - name: ARANGODB_ENDPOINT
+      value: "ssl://35.204.64.118:8529"
+    - name: ARANGODB_USER
+      value: "root"
+    - name: ARANGODB_PASSWD
+      value: ""

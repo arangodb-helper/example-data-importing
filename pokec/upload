@@ -1,0 +1,14 @@
+#!/usr/bin/fish
+
+arangosh --server.endpoint $ARANGODB_ENDPOINT --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD --javascript.execute /makegraph.js
+
+arangoimp --server.endpoint tcp://$ARANGODB_ENDPOINT --collection profiles_random --file profiles_raw.json --type json --threads 8 --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD
+arangoimp --server.endpoint tcp://$ARANGODB_ENDPOINT --collection relations_random --file relations_raw.json --type json --threads 8 --from-collection-prefix "profiles_random" --to-collection-prefix "profiles_random" --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD
+arangoimp --server.endpoint tcp://$ARANGODB_ENDPOINT --collection profiles_smart --file profiles_raw.json --type json --threads 8 --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD
+arangoimp --server.endpoint tcp://$ARANGODB_ENDPOINT --collection relations_smart --file relations_raw.json --type json --threads 8 --from-collection-prefix "profiles_smart" --to-collection-prefix "profiles_smart" --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD
+
+
+arangoimp --collection patents_naive --file patents_arangodb_naive.csv --type csv --server.endpoint $ARANGODB_ENDPOINT --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD $argv
+arangoimp --collection citations_naive --file citations_arangodb_naive.csv --type csv --server.endpoint $ARANGODB_ENDPOINT --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD $argv
+arangoimp --collection patents_smart --file patents_arangodb_smart.csv --type csv --server.endpoint $ARANGODB_ENDPOINT --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD $argv
+arangoimp --collection citations_smart --file citations_arangodb_smart.csv --type csv --server.endpoint $ARANGODB_ENDPOINT --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD $argv

@@ -1,0 +1,6 @@
+#!/usr/bin/fish
+
+# Overload this with some processing instructions, for example unzipping.
+
+xz -d profiles_raw.json.xz
+xz -d relations_raw.json.xz
