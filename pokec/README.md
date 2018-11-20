@@ -19,18 +19,18 @@ You need:
     or the S3downloader credentials in the file `arangodbdownload.csv.asc`
     which is encrypted, use
 
-~~~~~
-gpg -d arangodbdownload.csv.asc
-~~~~~
+    ~~~~~
+    gpg -d arangodbdownload.csv.asc
+    ~~~~~
 
     and the office WiFi password do decrypt.
 
   - The endpoint of the ArangoDB instance as `ARANGODB_ENDPOINT`.
     If your cluster is running in k8s, you probably want to do
 
-~~~~~
-kubectl get service
-~~~~~
+    ~~~~~
+    kubectl get service
+    ~~~~~
 
     and identify the `-ea` external access endpoint. Do not forget to specify
     the `ssl://` prefix, if you use TLS (which is the default!).
