@@ -1,8 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pokecsimporter
+  name: pokecimporter
 spec:
+  restartPolicy: Never
   containers:
   - name: importer
     image: arangodb/pokecimporter:3.4

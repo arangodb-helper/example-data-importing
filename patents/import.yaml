@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: patentsimporter
 spec:
+  restartPolicy: Never
   containers:
   - name: importer
     image: arangodb/patentimporter:3.4
