@@ -7,7 +7,7 @@ push:
 
 rclone.tar.gz:
 	mkdir tmp
-	cd tmp ; curl -O -s https://downloads.rclone.org/rclone-current-linux-amd64.zip ; unzip -x -j ../rclone-current-linux-amd64.zip ; tar czvf ../rclone.tar.gz *
+	cd tmp ; curl -O -s https://downloads.rclone.org/rclone-current-linux-amd64.zip ; unzip -x -j rclone-current-linux-amd64.zip ; rm rclone-current-linux-amd64.zip ; tar czvf ../rclone.tar.gz *
 	rm -rf tmp
 
 clean:
