@@ -46,7 +46,7 @@ non-smart - and imports the data.
 You can also use the Docker image locally with `docker`, here is the command:
 
 ~~~~~
-docker run -it -e RCLONE_S3_ACCESS_KEY_ID=<ACCESS_KEY_ID> -e RCLONE_S3_SECRET_ACCESS_KEY=<SECRET_KEY> -e ARANGODB_ENDPOINT=<ENDPOINT> -e ARANGODB_USER=root -e ARANGODB_PASSWD= arangodb/patentsimport:3.4
+docker run -it -e RCLONE_S3_ACCESS_KEY_ID=<ACCESS_KEY_ID> -e RCLONE_S3_SECRET_ACCESS_KEY=<SECRET_KEY> -e ARANGODB_ENDPOINT=<ENDPOINT> -e ARANGODB_USER=root -e ARANGODB_PASSWD= arangodb/patentimporter:3.4
 ~~~~~
 
 # Recreate the Docker image
