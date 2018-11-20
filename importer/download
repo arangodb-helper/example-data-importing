@@ -1,0 +1,3 @@
+#!/usr/bin/fish
+
+# Overload this with commands to download the data, for example using rclone.

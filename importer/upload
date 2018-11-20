@@ -1,0 +1,7 @@
+#!/usr/bin/fish
+
+# Overload this with commands to import the data using arangoimp
+
+# Example:
+#
+#   arangoimp --collection patents_naive --file patents_arangodb_naive.csv --server.endpoint $ARANGOIMPORT

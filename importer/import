@@ -1,0 +1,8 @@
+#!/usr/bin/fish
+
+mkdir -p /tmp/tmp
+cd /tmp/tmp
+
+source /download
+source /process
+source /upload

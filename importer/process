@@ -1,0 +1,3 @@
+#!/usr/bin/fish
+
+# Overload this with some processing instructions, for example unzipping.
