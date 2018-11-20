@@ -1,0 +1,8 @@
+#!/usr/bin/fish
+
+arangosh --server.endpoint $ARANGODB_ENDPOINT --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD --javascript.execute /makegraph.js
+
+arangoimp --collection patents_naive --file patents_arangodb_naive.csv --type csv --server.endpoint $ARANGODB_ENDPOINT --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD $argv
+arangoimp --collection citations_naive --file citations_arangodb_naive.csv --type csv --server.endpoint $ARANGODB_ENDPOINT --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD $argv
+arangoimp --collection patents_smart --file patents_arangodb_smart.csv --type csv --server.endpoint $ARANGODB_ENDPOINT --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD $argv
+arangoimp --collection citations_smart --file citations_arangodb_smart.csv --type csv --server.endpoint $ARANGODB_ENDPOINT --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD $argv

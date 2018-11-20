@@ -1,0 +1,8 @@
+#!/usr/bin/fish
+
+# Overload this with some processing instructions, for example unzipping.
+
+xz -d patents_arangodb_naive.csv.xz
+xz -d patents_arangodb_smart.csv.xz
+xz -d citations_arangodb_naive.csv.xz
+xz -d citations_arangodb_smart.csv.xz
