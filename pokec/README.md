@@ -50,6 +50,9 @@ You can also use the Docker image locally with `docker`, here is the command:
 docker run -it -e RCLONE_S3_ACCESS_KEY_ID=<ACCESS_KEY_ID> -e RCLONE_S3_SECRET_ACCESS_KEY=<SECRET_KEY> -e ARANGODB_ENDPOINT=<ENDPOINT> -e ARANGODB_USER=root -e ARANGODB_PASSWD= arangodb/pokecimporter:3.4
 ~~~~~
 
+For the argument values, use the same values as describe above under
+k8s.
+
 # Recreate the Docker image
 
 This step is normally not necessary.
