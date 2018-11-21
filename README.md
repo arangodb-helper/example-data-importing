@@ -10,4 +10,5 @@ Here is an overview over what is available:
   - `importer` has the setup for the generic base image `importer`
   - `patents`: a graph whose vertices are patents and edges are citations
   - `pokec`: a social network with anonymized data
+  - `shop`: a toy example of an online shop illustrating multi-model DBs
 
