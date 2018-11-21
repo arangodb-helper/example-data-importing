@@ -1,0 +1,5 @@
+#!/usr/bin/fish
+
+arangosh --server.endpoint $ARANGODB_ENDPOINT --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD --javascript.execute /makeshop.js
+arangosh --server.endpoint $ARANGODB_ENDPOINT --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD --javascript.execute /moredata.js
+

@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shopimporter
+spec:
+  restartPolicy: Never
+  containers:
+  - name: importer
+    image: arangodb/shopimporter:3.4
+    env:
+    - name: ARANGODB_ENDPOINT
+      value: "ssl://35.204.64.118:8529"
+    - name: ARANGODB_USER
+      value: "root"
+    - name: ARANGODB_PASSWD
+      value: ""
+    - name: NRUSERS
+      value: "1000000"
+    - name: NRITEMS
+      value: "100000"
+    - name: NRSALES
+      value: "100000"
+    - name: NRREVIEWS
+      value: "10000"
+    - name: NRBASKETS
+      value: "100000"
+
