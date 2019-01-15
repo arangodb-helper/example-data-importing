@@ -36,7 +36,7 @@ some collections and graphs.
 You can also use the Docker image locally with `docker`, here is the command:
 
 ~~~~~
-docker run -it -e ARANGODB_ENDPOINT=<ENDPOINT> -e ARANGODB_USER=root -e ARANGODB_PASSWD= arangodb/pokecimporter:3.4
+docker run -it -e ARANGODB_ENDPOINT=<ENDPOINT> -e ARANGODB_USER=root -e ARANGODB_PASSWD= arangodb/shopimporter:3.4
 ~~~~~
 
 For the argument values, use the same values as describe above under
