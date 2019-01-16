@@ -95,7 +95,8 @@ for (let i = 1; i <= numberOfItems; ++i) {
           inStock: myRand(0, 1000), weight: myRand(1,100),
           shipping: myRand(100,2000) * 0.01,
           orderId: "ID-" + myRand(1000, 1000000),
-          supplier: "Supplier-" + myRand(100,10000)});
+          supplier: "Supplier-" + myRand(100,10000),
+          category: myRand(1,200)});
   if (l.length % 1000 === 0 || i === numberOfItems) {
     let keys = items.insert(l);
     for (let x of keys) {
