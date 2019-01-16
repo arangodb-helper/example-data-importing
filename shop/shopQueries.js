@@ -65,6 +65,7 @@ query = `
 query = `
   FOR s IN sales
     FOR i IN items
+      FILTER i.category == 100
       FILTER i._id == s._to
       COLLECT bill = s.billingId INTO items
       FOR c IN customers
@@ -77,6 +78,7 @@ query = `
 // Find top sellers (using graph):
 query = `
   FOR item IN items
+    FILTER item.category == 100
     LET buyers = (FOR v IN 1..1 INBOUND item GRAPH "sales" RETURN v)
     LET nr = LENGTH(buyers)
     SORT nr DESC
