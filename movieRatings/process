@@ -1,0 +1,4 @@
+#!/usr/bin/fish
+
+echo "Nothing to process here."
+

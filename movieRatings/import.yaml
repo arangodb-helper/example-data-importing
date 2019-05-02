@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: movieratingsimporter
+spec:
+  restartPolicy: Never
+  containers:
+  - name: importer
+    image: arangodb/movieratingsimporter:3.4
+    env:
+    - name: ARANGODB_ENDPOINT
+      value: "ssl://35.204.64.118:8529"
+    - name: ARANGODB_USER
+      value: "root"
+    - name: ARANGODB_PASSWD
+      value: ""

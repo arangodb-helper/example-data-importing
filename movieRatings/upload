@@ -1,0 +1,8 @@
+#!/usr/bin/fish
+
+arangosh --server.endpoint $ARANGODB_ENDPOINT --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD --javascript.execute /makegraph.js
+
+arangoimp --collection movies --file /data/movies.csv --type csv --translate "item_id=_key" --server.endpoint $ARANGODB_ENDPOINT --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD $argv
+arangoimp --collection users --file /data/users.csv --type csv --translate "user_id=_key" --server.endpoint $ARANGODB_ENDPOINT --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD $argv
+arangoimp --collection ratings --file /data/ratings.csv --type csv --translate "user_id=_from" --translate "item_id=_to" --from-collection-prefix=users/ --to-collection-prefix=movies/ --server.endpoint $ARANGODB_ENDPOINT --server.username $ARANGODB_USER --server.password $ARANGODB_PASSWD $argv
+
